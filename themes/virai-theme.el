@@ -378,7 +378,7 @@
       `(company-scrollbar-bg ((t nil)))
       `(company-scrollbar-fg ((t nil)))
       `(company-template-field ((t nil)))
-      `(company-tooltip ((t nil)))
+      `(company-tooltip ((t (:background ,color-bg-0))))
       `(company-tooltip-annotation ((t nil)))
       `(company-tooltip-annotation-selection ((t nil)))
       `(company-tooltip-common ((t nil)))
@@ -400,13 +400,27 @@
       `(highlight-symbol-face ((t (:background ,color-bg-2))))
 
       ;; mode-line
-      `(mode-line ((t (:background ,color-bg-0 :foreground ,color-bg-1))))
+      `(mode-line ((t (:background ,color-bg-1 :foreground ,color-fg-1))))
+
+      ;; minibuffer
+      `(minibuffer-prompt ((t (:background ,color-bg-1))))
 
       ;; powerline
-      `(powerline-active1   ((t (:background ,color-bg-1  :foreground ,color-fg-2))))
-      `(powerline-active2   ((t (:background ,color-bg-0 :foreground ,color-fg-1))))
+      `(powerline-active1   ((t (:background ,color-bg-1 :foreground ,color-fg-2))))
+      `(powerline-active2   ((t (:background ,color-bg-0 :foreground ,color-fg-3))))
       `(powerline-inactive1 ((t (:background ,color-bg-0 :foreground ,color-fg-2))))
-      `(powerline-inactive2 ((t (:background ,color-bg--1 :foreground ,color-fg-1))))
+      `(powerline-inactive2 ((t (:background ,color-bg-0 :foreground ,color-fg-3))))
+
+      ;;; mmm-mode
+      `(mmm-default-submode-face     ((t (:background ,color-bg--1))))
+      `(mmm-cleanup-submode-face     ((t (:background ,color-bg--1))))
+      `(mmm-code-submode-face        ((t (:background ,color-bg--1))))
+      `(mmm-comment-submode-face     ((t (:background ,color-bg--1))))
+      `(mmm-declaration-submode-face ((t (:background ,color-bg--1))))
+      `(mmm-delimiter-face           ((t (:background ,color-bg--1))))
+      `(mmm-init-submode-face        ((t (:background ,color-bg--1))))
+      `(mmm-output-submode-face      ((t (:background ,color-bg--1))))
+      `(mmm-special-submode-face     ((t (:background ,color-bg--1))))
 
       ;; rainbow delimiters
       `(rainbow-delimiters-depth-1-face  ((t (:foreground ,cyan-6))))
@@ -432,7 +446,11 @@
 
     (custom-theme-set-variables 'virai
       ;; beacon
-      `(beacon-color ,color-action-1)))
+      `(beacon-color ,color-action-1)
+
+      ;; company-quickhelp
+      `(company-quickhelp-color-background ,color-bg-0)
+      `(company-quickhelp-color-foreround  ,color-fg-1)))
   )
 
 (provide-theme 'virai)
